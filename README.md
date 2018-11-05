@@ -62,7 +62,7 @@ ffmpeg -f mjpeg -i udp://yourIpAddress:9000 udp://0.0.0.0:8090/feed1.ffm
 
 这时，你在yourIpAddress:8090/stat.html便可以看见你的所有视频文件地址
 
-在html标签中插入所有链接，播放器即可
+在html标签中插入链接，播放器即可
 
 而mjpeg格式可以作为图片插入html5中
 
