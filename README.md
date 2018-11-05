@@ -54,7 +54,7 @@ ffserver -f your/config/file
 
 这里使用udp推流，推usb摄像头，推送mjpeg视频（无音频）流为例
 
-ffmpeg -re -i /dev/video0 -an -vcodec mjpeg -s 640x480 -f mjpeg udp://yourIpAddress:9000
+ffmpeg -re -i /dev/video0 -an -vcodec mjpeg -s 800x600 -f mjpeg udp://yourIpAddress:9000
 
 在服务器采用ffmpeg转流：
 
