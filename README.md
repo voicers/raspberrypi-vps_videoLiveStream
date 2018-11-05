@@ -3,7 +3,9 @@
 （非rtmp）用树莓派与云主机（以阿里云为例）搭建直播服务器（1）
 
 采取方案：udp推流至阿里云，在阿里云上转流、直播（使用ffmpeg与ffserver）
-直播方案：a.视频封装：asf，测试推流格式：mjpeg/h264等，支持原生浏览器平台：windows
+直播方案：
+                 
+                 a.视频封装：asf，测试推流格式：mjpeg/h264等，支持原生浏览器平台：windows
                  
                  b.视频封装：swf，测试推流格式：mjpeg，支持原生浏览器平台：win/mac
                  
@@ -32,8 +34,11 @@ cp /etc/ffserver.conf .
 nano ffserver.conf
 
 下面来编写conf文件
-在<stream test1.conf>与</stream>之间所有没有加#的行前加#
+
+在《stream test1.conf》与《/stream》之间所有没有加#的行前加#
+
 在example streams 下面的类型里选择你想要的推流格式，并把该类所有行前面的#去掉，把你不想要的格式行前加#
+
 配置直播流：根据你的要求配置直播流（关键），可以参考前面他写的，例如只推视频流：加上NoAudio，并在所有含audio的行前加#，一定要设置帧率VideoFrameRate 你想要的帧率。这个一定要写，默认帧率为2fps或5fps，我就是这个原因搞了一天，即使你在这一行前面加#他依旧会使用默认帧率
 
 支持推两种封装格式，但最好采用同一种编码形式，在配置文件里留两种输出即可
